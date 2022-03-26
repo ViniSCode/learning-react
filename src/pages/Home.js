@@ -1,4 +1,3 @@
-
 import { LastPost } from './../components/LastPost/index';
 import { LastTwoPosts } from './../components/LastTwoPosts/index';
 
