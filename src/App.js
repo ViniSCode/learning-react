@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Footer } from './components/Footer/index';
 import { Header } from './components/Header/index';
@@ -7,18 +8,22 @@ import { Login } from './pages/Login';
 import { Posts } from './pages/Posts';
 
 export function App() {
+  const [isAuth, setIsAuth] = useState(false);
+
+  let loginOrCreatePost = isAuth ? <CreatePost /> : <Login />;
   return (
     <Router>
-        <Header />
+        <Header/>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<Posts />} />
-        <Route path="/create" element={<CreatePost />} />
+
 
         // if user logged in load Profile.js page
         // otherwise load Login Page
-        <Route path="/profile" element={<Login />} />
+        <Route path="/create" element={loginOrCreatePost} />
+        <Route path="/profile" element={<Login setIsAuth={setIsAuth}/>} />
       </Routes>
 
       <Footer />

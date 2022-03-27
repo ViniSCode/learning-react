@@ -26,6 +26,14 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  body{
+    min-height: 100vh;
+  }
+
+  #root{
+    min-height: 100vh;
+  }
+
   *, button, input, select, textarea {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;

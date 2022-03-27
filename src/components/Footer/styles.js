@@ -8,13 +8,14 @@ export const Container = styled.footer`
   align-items: center;
   justify-content: center;
   padding: 4.75rem 0;
+
+  position: sticky;
+  top: 100%;
  }
 
  @media (min-height: 1580px){
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   width:100%;
+   position: sticky;
+   top: 100%;
  }
 `
 

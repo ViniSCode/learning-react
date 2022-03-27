@@ -1,7 +1,6 @@
 import { Container } from './styles';
 
 export function Avatar(props) {
-  console.log(props);
   const post = props.post;
 
   return (

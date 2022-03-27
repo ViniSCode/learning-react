@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Avatar, Container, CreatePostButton, Logo, NavMenu } from './styles';
-
 export function Header() {
+ 
   return (
     <Container>
       <nav>
