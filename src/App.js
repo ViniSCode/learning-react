@@ -9,11 +9,10 @@ import { Posts } from './pages/Posts';
 
 export function App() {
   const [isAuth, setIsAuth] = useState(false);
-
-  let loginOrCreatePost = isAuth ? <CreatePost /> : <Login />;
+  
   return (
     <Router>
-        <Header/>
+        <Header isAuth={isAuth}/>
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,7 +21,8 @@ export function App() {
 
         // if user logged in load Profile.js page
         // otherwise load Login Page
-        <Route path="/create" element={loginOrCreatePost} />
+        <Route path="/login" element={<Login setIsAuth={setIsAuth}/>} />
+        <Route path="/create" element={isAuth ? <CreatePost /> : <Login setIsAuth={setIsAuth} />} />
         <Route path="/profile" element={<Login setIsAuth={setIsAuth}/>} />
       </Routes>
 

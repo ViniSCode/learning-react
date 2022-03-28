@@ -10,6 +10,12 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
   }
+
+  .login-icon{
+    width: 36px;
+    height: 36px;
+    color: gray;
+  }
 `
 
 export const Logo = styled.div`

@@ -1,9 +1,9 @@
 import { FcGoogle } from 'react-icons/fc';
 import { Container } from './styles';
 
-export function SignInWithGoogleButton() {
+export function SignInWithGoogleButton({ signInWithGoogle, setIsAuth}) {
   return (
-    <Container>
+    <Container onClick={signInWithGoogle}>
       <FcGoogle className="google-icon"/>
       <p>Sign in with Google</p>
     </Container>
