@@ -9,14 +9,20 @@ export const Container = styled.div`
   width: 250px;
   height: 50px;
 
-  margin: 0 auto;
-  border: 1px solid gray;
+  margin: 15rem auto 0 auto;
+  border: 2px solid #aaa;
   border-radius: 2px;
+  transition: filter .3s ease;
 
-  .google-icon {
+  &:hover{
+    filter: brightness(0.1);
+  }
+
+  .signOut-icon {
     margin-right: 1rem;
     width: 40px;
     height: 40px;
+    color: #888;
   }
 
   p {

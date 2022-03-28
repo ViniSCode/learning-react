@@ -4,7 +4,7 @@ export function SignOutButton({ handleSignOut, setIsAuth }) {
   
   return (
     <Container onClick={handleSignOut}>
-      <IoExitOutline className="google-icon"/>
+      <IoExitOutline className="signOut-icon"/>
       <p>Sign out</p>
     </Container>
   );
