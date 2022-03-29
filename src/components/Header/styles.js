@@ -41,7 +41,7 @@ export const NavMenu = styled.div`
 `
 
 export const CreatePostButton  = styled.div`
-  background: var(--primary);
+  background: var(--secondary);
   color: white;
   border-radius: 5px;
   padding: 0.6rem 0.8rem; 

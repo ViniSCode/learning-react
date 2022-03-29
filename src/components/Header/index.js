@@ -1,6 +1,8 @@
 import { BiUserCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import LogoImg from '../../assets/logo.svg';
 import { Avatar, Container, CreatePostButton, Logo, NavMenu } from './styles';
+
 export function Header({isAuth}) {
  
   return isAuth ? 
@@ -8,7 +10,9 @@ export function Header({isAuth}) {
     <Container>
       <nav>
         <Logo>
-          <Link to="/">DevBlog</Link>
+          <Link to="/">
+            <img src={LogoImg} alt="Logo devblog" />
+          </Link>
         </Logo>
 
         <NavMenu>
@@ -29,9 +33,9 @@ export function Header({isAuth}) {
   (
     <Container>
       <nav>
-        <Logo>
-          <Link to="/">DevBlog</Link>
-        </Logo>
+          <Link to="/">
+            <img src={LogoImg} alt="Logo devblog" />
+          </Link>
 
         <NavMenu>
           <Link to="/">Home</Link>

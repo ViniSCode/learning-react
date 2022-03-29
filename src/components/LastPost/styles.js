@@ -6,12 +6,8 @@ export const Container = styled.div`
   padding: 1rem;
 
   display: flex;
-  align-items: start;
-  justify-content: space-between;
-
-  @media (max-width: 900px) {
-    flex-wrap: wrap;
-  }
+  align-items: center;
+  justify-content: center;
 `
 
 export const RightText = styled.div`
@@ -27,9 +23,20 @@ export const RightText = styled.div`
   
   h2 {
     margin-top: 0.688rem;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 39px;
+    font-size: 1.75rem;
+    width: 100%;
+    max-width: 300px;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2; 
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+
   }
 
   p {
@@ -71,32 +78,6 @@ export const RightText = styled.div`
       font-weight: 400;
       line-height: 19px;
       text-align: justify;
-    }
-  }
-
-`
-
-export const Left = styled.div`
-  width: 100%;
-  max-width: 790px;
-
-  img {
-    max-width: 790px;
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    max-width: 805px;
-    border-radius: 5px;
-    margin-right: 1rem;
-  }
-
-  @media (max-width: 900px) {
-    width: 100%;
-    max-width: 100%;
-
-    img {
-      width: 100%;
-      max-width: 100%;
     }
   }
 

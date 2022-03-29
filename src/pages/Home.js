@@ -1,11 +1,11 @@
+import { HomePageDevBlog } from './../components/HomePageDevBlog/index';
 import { LastPost } from './../components/LastPost/index';
-import { LastTwoPosts } from './../components/LastTwoPosts/index';
 
 export function Home() {
   return (
     <>
+      <HomePageDevBlog/>
       <LastPost />
-      <LastTwoPosts/>
     </>
   );
 }

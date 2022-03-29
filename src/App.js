@@ -9,9 +9,8 @@ import { Posts } from './pages/Posts';
 import { Profile } from './pages/Profile';
 
 export function App() {
-  
   const [isAuth, setIsAuth] = useState(false);
-
+  
   return (
     <Router>
         <Header isAuth={isAuth}/>
@@ -25,7 +24,7 @@ export function App() {
         // otherwise load Login Page
         <Route path="/login" element={<Login setIsAuth={setIsAuth} isAuth={isAuth}/>} />
         <Route path="/create" element={isAuth ? <CreatePost /> : <Login setIsAuth={setIsAuth} />} />
-        <Route path="/profile" element={isAuth ? <Profile setIsAuth={setIsAuth}/> : <Login setIsAuth={setIsAuth}/>} />
+        <Route path="/profile" element={isAuth ? <Profile setIsAuth={setIsAuth} /> : <Login setIsAuth={setIsAuth}/>} />
       </Routes>
 
       <Footer />
