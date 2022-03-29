@@ -9,4 +9,9 @@ export const Container = styled.button`
   color: white;
   border-radius: 23.5px;
   font-weight: 500;
+  transition: filter .3s ease;
+
+  &:hover{
+    filter: brightness(0.9);
+  }
 `

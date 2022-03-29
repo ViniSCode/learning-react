@@ -1,10 +1,10 @@
 import { BiUserCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import LogoImg from '../../assets/logo.svg';
+import { auth } from '../../firebase-config';
 import { Avatar, Container, CreatePostButton, Logo, NavMenu } from './styles';
 
 export function Header({isAuth}) {
- 
   return isAuth ? 
   (
     <Container>
@@ -23,7 +23,7 @@ export function Header({isAuth}) {
           </Link>
           <Link to="/profile">
             <Avatar>
-              <img src="https://www.github.com/viniscode.png" alt="profile image" />  
+              <img src={auth.currentUser.photoURL} />  
             </Avatar>  
           </Link> 
         </NavMenu>

@@ -13,6 +13,11 @@ export const Container = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: filter .3s ease;
+
+  &:hover{
+    filter: brightness(0.9);
+  }
   
   .arrow-icon {
     margin-left: 6px;
