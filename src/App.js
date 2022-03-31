@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Footer } from './components/Footer/index';
 import { Header } from './components/Header/index';
+import { MobileMenu } from './components/MobileMenu/index';
 import { CreatePost } from './pages/CreatePost';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
@@ -10,10 +11,12 @@ import { Profile } from './pages/Profile';
 
 export function App() {
   const [isAuth, setIsAuth] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
   
   return (
     <Router>
-        <Header isAuth={isAuth}/>
+        <MobileMenu isAuth={isAuth} menuVisible={menuVisible} setMenuVisible={setMenuVisible}/>
+        <Header isAuth={isAuth} setMenuVisible={setMenuVisible} menuVisible={menuVisible}/>
 
       <Routes>
         <Route path="/" element={<Home />} />

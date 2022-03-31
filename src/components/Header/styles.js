@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.header`
   max-width: 1280px;
@@ -16,18 +16,38 @@ export const Container = styled.header`
     height: 36px;
     color: gray;
   }
+
+  .menuOpen {
+    width: 25px;
+    height: 25px;
+    opacity: 1;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
 `
 
 export const Logo = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-  
+  opacity: 1;
+
   a{
     font-size: 1.25rem;
     font-family: 'Satisfy', cursive;
   }
+
+  ${({isMenuVisible}) => isMenuVisible && css`
+    opacity: 0;
+  `}
 `
 
 export const NavMenu = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+  
   display: flex;
   align-items: center;
 
@@ -53,7 +73,6 @@ export const CreatePostButton  = styled.div`
 `
 
 export const Avatar = styled.div`
-
   margin-top: 5px;
 
   img{
