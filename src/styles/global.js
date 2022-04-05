@@ -29,10 +29,12 @@ export const GlobalStyle = createGlobalStyle`
 
   body{
     min-height: 100vh;
+    height: 100%;
   }
 
   #root{
     min-height: 100vh;
+    height: 100%;
   }
 
   *, button, input, select, textarea {

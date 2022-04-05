@@ -1,7 +1,12 @@
 import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import { auth, provider } from '../firebase-config';
 import { SignInWithGoogleButton } from './../components/SignInWithGoogleButton/index';
+
+const Container = styled.div`
+  min-height: 100vh;
+`
 
 export function Login({setIsAuth}) {
   let navigate = useNavigate();
@@ -15,8 +20,8 @@ export function Login({setIsAuth}) {
   }
 
   return (
-    <>
+    <Container>
       <SignInWithGoogleButton signInWithGoogle={signInWithGoogle} setIsAuth={setIsAuth}/>
-    </>
+    </Container>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BiUserCircle } from 'react-icons/bi';
 import { FiMenu } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -6,6 +7,19 @@ import { auth } from '../../firebase-config';
 import { Avatar, Container, CreatePostButton, Logo, NavMenu } from './styles';
 
 export function Header({isAuth, setMenuVisible, menuVisible}) {
+  const [userImage, setUserImage] = useState('');
+
+  useEffect(() => {
+    try {
+      if(userImage){
+        return isAuth ? setUserImage(auth.currentUser.photoURL) : setUserImage('');
+      }
+      return isAuth ? setUserImage(auth.currentUser.photoURL) : setUserImage('');
+    } catch (e) {
+      console.log(e)
+    }
+  }, [isAuth]);
+  
   return isAuth ? 
   (
     <Container  isMenuVisible={menuVisible}>
@@ -16,7 +30,7 @@ export function Header({isAuth, setMenuVisible, menuVisible}) {
           </Link>
         </Logo>
 
-          <FiMenu onClick={() => setMenuVisible(true)} className="menuOpen" isMenuVisible={menuVisible}/>
+          <FiMenu onClick={() => setMenuVisible(true)} className="menuOpen"/>
         <NavMenu>
           <Link to="/">Home</Link>
           <Link to="/posts">Posts</Link>
@@ -25,7 +39,7 @@ export function Header({isAuth, setMenuVisible, menuVisible}) {
           </Link>
           <Link to="/profile">
             <Avatar>
-              <img src={auth.currentUser.photoURL} />  
+              <img src={userImage} />  
             </Avatar>  
           </Link> 
         </NavMenu>

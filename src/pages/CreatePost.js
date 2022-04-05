@@ -6,6 +6,7 @@ import { auth, db } from '../firebase-config';
 
 
 const Container = styled.div`
+  min-height: 100vh;
   max-width: 500px;
   margin: 3rem auto 2rem auto;
   background-color: #fff;

@@ -9,10 +9,16 @@ export const Container = styled.div`
   width: 250px;
   height: 50px;
 
-  margin: 15rem auto 0 auto;
+  margin: 0 auto;
   border: 2px solid #aaa;
   border-radius: 2px;
   transition: filter .3s ease;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
 
   &:hover{
     filter: brightness(0.1);

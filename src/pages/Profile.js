@@ -1,7 +1,12 @@
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import { auth } from '../firebase-config';
 import { SignOutButton } from './../components/SignOutButton/index';
+
+const Container = styled.div`
+    min-height: 100vh;
+`
 
 export function Profile({ setIsAuth }) {
   let navigate = useNavigate();
@@ -15,6 +20,8 @@ export function Profile({ setIsAuth }) {
   }
 
   return (
-    <SignOutButton handleSignOut={handleSignOut} setIsAuth={setIsAuth}/>
+    <Container>
+      <SignOutButton handleSignOut={handleSignOut} setIsAuth={setIsAuth}/>
+    </Container>
   );
 }
