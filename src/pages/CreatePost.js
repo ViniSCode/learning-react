@@ -4,13 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { auth, db } from '../firebase-config';
 
-
 const Container = styled.div`
-  min-height: 100vh;
+min-height: 100vh;
+
+`
+
+const CreatePostContainer = styled.div`
   max-width: 500px;
   margin: 3rem auto 2rem auto;
   background-color: #fff;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
   border-radius: 5px;
   border: 1px solid #aaa;
   box-shadow: 1px 2px 20px 5px rgba(0, 0, 0, 0.1);
@@ -21,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const CreatePostContainer = styled.div`
+const CreatePostContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,7 +103,8 @@ export function CreatePost() {
         postText, 
         author: {
           name: auth.currentUser.displayName, 
-          id: auth.currentUser.uid
+          id: auth.currentUser.uid,
+          userImage: auth.currentUser.photoURL
         }
       }
       );
@@ -110,18 +114,20 @@ export function CreatePost() {
   return (
     <Container>
       <CreatePostContainer>
-        <h2>Create A Post</h2>
-        <Input>
-          <label>Title: </label>
-          <input type="text" placeholder="Title..." onChange={(event)=> setTitle(event.target.value)}/>
-        </Input>
-        <Input>
-          <label>Post: </label>
-          <textarea placeholder="Post..." onChange={(event)=> setPostText(event.target.value)}/>
-        </Input>
-        <CreatePostButton onClick={handleCreateNewPost}>
-          Submit Post
-        </CreatePostButton>
+        <CreatePostContent>
+          <h2>Create A Post</h2>
+          <Input>
+            <label>Title: </label>
+            <input type="text" placeholder="Title..." onChange={(event)=> setTitle(event.target.value)}/>
+          </Input>
+          <Input>
+            <label>Post: </label>
+            <textarea placeholder="Post..." onChange={(event)=> setPostText(event.target.value)}/>
+          </Input>
+          <CreatePostButton onClick={handleCreateNewPost}>
+            Submit Post
+          </CreatePostButton>
+        </CreatePostContent>
       </CreatePostContainer>
     </Container>
   );

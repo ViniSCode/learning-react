@@ -1,12 +1,17 @@
+import { BiUserCircle } from 'react-icons/bi';
 import { Container } from './styles';
 
 export function Avatar(props) {
-  const post = props.post;
+  const username = props.post.name;
+  const userImage = props.post.userImage ? props.post.userImage : '';
 
   return (
     <Container>
-      <img src={post.user.image} alt="" />
-      <p>{post.user.name}</p>
+      {
+        userImage ? <img src={userImage} alt="" />
+        : <BiUserCircle className='login-icon'/>
+      }
+      <p>{username}</p>
     </Container>
   )
 }

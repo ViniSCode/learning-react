@@ -16,10 +16,10 @@ export function Header({isAuth, setMenuVisible, menuVisible}) {
       }
       return isAuth ? setUserImage(auth.currentUser.photoURL) : setUserImage('');
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   }, [isAuth]);
-  
+
   return isAuth ? 
   (
     <Container  isMenuVisible={menuVisible}>
