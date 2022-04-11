@@ -66,7 +66,7 @@ export const RightText = styled.div`
 
     
   @media (max-width: 1080px) {
-    max-width: 372px;
+
     
     h2 {
       font-size: 1.8rem;

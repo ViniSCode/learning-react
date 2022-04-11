@@ -109,13 +109,14 @@ export function Posts() {
       </Loading>) : 
       (
         postLists.map(post => {
+          console.log(post.id)
           return(
             <Card key={post.id}>
               <Avatar post={post.author}/>
               <h2>{post.title}</h2>
               <p className="postText">{post.postText}</p>
               <div className="divider" />
-              <ReadMoreButton />
+              <ReadMoreButton id={post.id}/>
             </Card>
           )
         })
