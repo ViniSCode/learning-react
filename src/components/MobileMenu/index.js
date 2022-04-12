@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import LogoImg from '../../assets/logo.svg';
-// import { MenuData } from '../../MenuData';
+import AuthContext from '../../contexts/AuthContext';
 import { Container, Logo, NavMenu } from './styles';
 
-export function MobileMenu({isAuth, menuVisible, setMenuVisible}) {
-    
+export function MobileMenu({menuVisible, setMenuVisible}) {
+  const { isAuth } = useContext(AuthContext);
+
   const MenuData = [
     {
       title: 'Home',

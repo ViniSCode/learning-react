@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { BiUserCircle } from 'react-icons/bi';
 import { FiMenu } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import LogoImg from '../../assets/logo.svg';
+import AuthContext from '../../contexts/AuthContext';
 import { auth } from '../../firebase-config';
 import { Avatar, Container, CreatePostButton, Logo, NavMenu } from './styles';
 
-export function Header({isAuth, setMenuVisible, menuVisible}) {
+export function Header({setMenuVisible, menuVisible}) {
+  const { isAuth } = useContext(AuthContext);
   const [userImage, setUserImage] = useState('');
 
   useEffect(() => {

@@ -109,7 +109,6 @@ export function Posts() {
       </Loading>) : 
       (
         postLists.map(post => {
-          console.log(post.id)
           return(
             <Card key={post.id}>
               <Avatar post={post.author}/>
